@@ -2,7 +2,7 @@ import { UserList } from "./user-list";
 import { Header } from "./header";
 import { Box } from "@mui/material";
 import { RemoveUser } from "./remove-user";
-import { SelectedUserProvider } from "../../contexts/SelectedUserProvider";
+import { SelectedUserProvider } from "../../contexts/selected-user/SelectedUserProvider";
 
 const style = {
   display: "flex",

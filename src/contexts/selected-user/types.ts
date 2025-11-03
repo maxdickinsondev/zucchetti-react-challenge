@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { User } from "../services/users/types";
+import type { User } from "../../services/users/types";
 
 export interface SelectedUserContextData {
   user: User | null;

@@ -5,8 +5,8 @@ import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import { useListUsers } from "../../../hooks/useListUsers";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelectedUser } from "../../../contexts/useSelectedUser";
 import { StatusEnum } from "../../../services/users/types";
+import { useSelectedUser } from "../../../contexts/selected-user/useSelectedUser";
 
 function UserList() {
   const { data } = useListUsers();

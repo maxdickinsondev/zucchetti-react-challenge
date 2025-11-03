@@ -4,6 +4,8 @@ import {
 } from "@tanstack/react-query";
 import { AppRoutes } from "./routes";
 
+import { ThemeModeProvider } from "./contexts/theme-mode/ThemeModeProvider";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -15,7 +17,9 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AppRoutes />
+      <ThemeModeProvider>
+        <AppRoutes />
+      </ThemeModeProvider>
     </QueryClientProvider>
   );
 }

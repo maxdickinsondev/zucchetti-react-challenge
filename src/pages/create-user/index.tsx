@@ -20,7 +20,7 @@ const style = {
   flexDirection: "column",
   minHeight: "100vh",
   marginInline: "auto",
-  maxWidth: 964,
+  maxWidth: 1280,
   paddingInline: 16,
 };
 

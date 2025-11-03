@@ -1,7 +1,7 @@
 import { Box, Button, Dialog, Typography } from "@mui/material";
 import { useCallback } from "react";
 import { useRemoveUser } from "../../../hooks/useRemoveUser";
-import { useSelectedUser } from "../../../contexts/useSelectedUser";
+import { useSelectedUser } from "../../../contexts/selected-user/useSelectedUser";
 
 function RemoveUser() {
   const { mutation } = useRemoveUser();
