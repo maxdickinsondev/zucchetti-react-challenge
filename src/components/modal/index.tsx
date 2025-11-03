@@ -18,12 +18,14 @@ const style = {
 function CustomModal({
   open,
   title,
+  isSaving,
   onclose,
   onConfirm,
   children,
 }: {
   open: boolean;
   title: string;
+  isSaving?: boolean;
   onclose: () => void;
   onConfirm: () => void;
   children: React.ReactNode;
@@ -40,8 +42,14 @@ function CustomModal({
 
         <Stack spacing={2}>{children}</Stack>
 
-        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 3 }}>
-          <Button variant="contained" onClick={onConfirm}>
+        <Box
+          sx={{ display: "flex", justifyContent: "flex-end", mt: 3 }}
+        >
+          <Button
+            disabled={isSaving}
+            variant="contained"
+            onClick={onConfirm}
+          >
             Salvar
           </Button>
         </Box>

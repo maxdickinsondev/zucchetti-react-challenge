@@ -1,4 +1,3 @@
-import { AddUser } from "./add-user";
 import { UserList } from "./user-list";
 import { Header } from "./header";
 import { Box } from "@mui/material";
@@ -15,7 +14,6 @@ const style = {
 function Dashboard() {
   return (
     <Box sx={style}>
-      <AddUser />
       <Header />
       <UserList />
     </Box>
