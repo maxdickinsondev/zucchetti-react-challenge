@@ -28,7 +28,7 @@ function AddUser() {
       title="Adicionar usuário"
       open={open}
       onclose={onClose}
-      onConfirm={() => mutation.mutate({ name: form.name, email: form.email })}
+      onConfirm={() => mutation.mutate({ name: form.name, email: form.email, status: "active" })}
     >
       <TextField
         value={form.name}

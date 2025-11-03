@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@test.com",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "email": "janedoe@test.com",
+      "status": "active"
+    },
+    {
+      "id": "1ed7",
+      "name": "Fulano",
+      "email": "fulano@test.com"
+    },
+    {
+      "id": "02d7",
+      "name": "Cicrano",
+      "email": "cicrano@test.com",
+      "status": "active"
+    }
+  ]
+}

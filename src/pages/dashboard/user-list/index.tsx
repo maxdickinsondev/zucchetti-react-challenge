@@ -3,9 +3,10 @@ import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import { useListUsers } from "../../../hooks/useListUsers";
 import { useMemo } from "react";
 
-const columns: GridColDef<{ id: number; name: string; email: string }>[] = [
+const columns: GridColDef<{ id: number; name: string; email: string; status: string }>[] = [
   { field: "name", headerName: "Nome", width: 150 },
   { field: "email", headerName: "E-mail", width: 150 },
+  { field: "status", headerName: "Status", width: 150 },
 ];
 
 function UserList() {
@@ -19,6 +20,7 @@ function UserList() {
         id: user.id,
         name: user.name,
         email: user.email,
+        status: user.status,
       })),
     [data],
   );
