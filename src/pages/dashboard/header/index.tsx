@@ -3,6 +3,14 @@ import { Box, Button, Typography } from "@mui/material";
 import { useModal } from "../../../contexts/useModal";
 import { useCallback } from "react";
 
+const style = {
+  mt: 4,
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+};
+
 function Header() {
   const { onOpen } = useModal();
 
@@ -11,15 +19,7 @@ function Header() {
   }, []);
 
   return (
-    <Box
-      sx={{
-        mt: 4,
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
+    <Box sx={style}>
       <Typography variant="h4">Dashboard de usuários</Typography>
       <Button startIcon={<Add />} variant="contained" color="primary" onClick={onShow}>
         Adicionar usuário

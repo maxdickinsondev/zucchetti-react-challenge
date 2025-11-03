@@ -24,18 +24,17 @@ function UserList() {
   );
 
   return (
-    <Box>
+    <Box sx={{ mt: 4 }}>
       <DataGrid
         rows={rows}
         columns={columns}
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 20,
             },
           },
         }}
-        pageSizeOptions={[5]}
         disableRowSelectionOnClick
       />
     </Box>
