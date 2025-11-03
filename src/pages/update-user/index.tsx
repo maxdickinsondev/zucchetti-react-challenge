@@ -69,11 +69,12 @@ function UpdateUser() {
           email: form.email,
           status: StatusEnum.ACTIVE,
         });
+        navigate("/");
       }
     } catch (err) {
       console.error(err);
     }
-  }, [form, id, mutation, validate]);
+  }, [form, id, mutation, navigate, validate]);
 
   console.log("aqui");
 
