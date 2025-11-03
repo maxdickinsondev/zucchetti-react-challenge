@@ -1,4 +1,5 @@
-import Dashboard from "./pages";
+import { ModalProvider } from "./contexts/ModalProvider";
+import Dashboard from "./pages/dashboard";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
@@ -12,7 +13,9 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Dashboard />
+      <ModalProvider>
+        <Dashboard />
+      </ModalProvider>
     </QueryClientProvider>
   );
 }
