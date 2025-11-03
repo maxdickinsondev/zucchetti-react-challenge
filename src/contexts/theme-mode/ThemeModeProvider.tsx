@@ -3,13 +3,24 @@ import { ThemeModeContext } from "./ThemeModeContext";
 import type { Mode, ThemeModeProviderProps } from "./types";
 import { darkTheme, lightTheme } from "../../styles/theme";
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, useMediaQuery } from "@mui/material";
 
 function ThemeModeProvider({ children }: ThemeModeProviderProps) {
-  const [mode, setMode] = useState<Mode>("light");
+  const prefersDarkMode = useMediaQuery(
+    "(prefers-color-scheme: dark)",
+  );
+  const [mode, setMode] = useState<Mode>(() => {
+    const savedMode = localStorage.getItem("theme-mode") as Mode;
+    if (savedMode) return savedMode;
+    return prefersDarkMode ? "dark" : "light";
+  });
 
   const onToggle = useCallback(() => {
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
+    setMode((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      localStorage.setItem("theme-mode", next);
+      return next;
+    });
   }, []);
 
   const theme = useMemo(
