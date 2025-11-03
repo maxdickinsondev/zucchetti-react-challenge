@@ -20,7 +20,7 @@ function useForm<T>(data: T) {
     [],
   );
 
-  return { form, clearForm, onChange };
+  return { form, setForm, clearForm, onChange };
 }
 
 export { useForm };

@@ -6,7 +6,7 @@ type Errors<T> = Partial<Record<keyof T, string>>;
 function useValidate<T>(schema: Schema) {
   const [errors, setErrors] = useState<Errors<T>>({});
 
-  const clear = useCallback(() => {
+  const clearErrors = useCallback(() => {
     setErrors({});
   }, []);
 
@@ -32,7 +32,7 @@ function useValidate<T>(schema: Schema) {
     [schema],
   );
 
-  return { errors, clear, validate };
+  return { errors, clearErrors, validate };
 }
 
 export { useValidate };

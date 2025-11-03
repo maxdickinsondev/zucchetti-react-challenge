@@ -1,11 +1,11 @@
 import { Box, Button, Dialog, Typography } from "@mui/material";
-import { useSelectedItem } from "../../../contexts/selected-item/useSelectedItem";
 import { useCallback } from "react";
 import { useRemoveUser } from "../../../hooks/useRemoveUser";
+import { useSelectedUser } from "../../../contexts/useSelectedUser";
 
 function RemoveUser() {
   const { mutation } = useRemoveUser();
-  const { user, onSelectUser } = useSelectedItem();
+  const { user, onSelectUser } = useSelectedUser();
 
   console.log("re-rendered remover user component");
 

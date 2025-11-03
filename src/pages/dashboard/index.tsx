@@ -1,6 +1,8 @@
 import { UserList } from "./user-list";
 import { Header } from "./header";
 import { Box } from "@mui/material";
+import { RemoveUser } from "./remove-user";
+import { SelectedUserProvider } from "../../contexts/SelectedUserProvider";
 
 const style = {
   display: "flex",
@@ -11,13 +13,20 @@ const style = {
   paddingInline: 16,
 };
 
-function Dashboard() {
+function WrapperDashboard() {
   return (
     <Box sx={style}>
       <Header />
+      <RemoveUser />
       <UserList />
     </Box>
   );
 }
+
+const Dashboard = () => (
+  <SelectedUserProvider>
+    <WrapperDashboard />
+  </SelectedUserProvider>
+);
 
 export default Dashboard;

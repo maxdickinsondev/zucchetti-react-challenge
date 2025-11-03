@@ -1,10 +1,8 @@
-import { ModalProvider } from "./contexts/modal/ModalProvider";
-import { SelectedItemProvider } from "./contexts/selected-item/SelectedItemProvider";
-import Dashboard from "./pages/dashboard";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { AppRoutes } from "./routes";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,11 +15,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ModalProvider>
-        <SelectedItemProvider>
-          <Dashboard />
-        </SelectedItemProvider>
-      </ModalProvider>
+      <AppRoutes />
     </QueryClientProvider>
   );
 }

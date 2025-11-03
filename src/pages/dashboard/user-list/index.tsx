@@ -4,12 +4,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import { useListUsers } from "../../../hooks/useListUsers";
 import { useMemo } from "react";
-import { RemoveUser } from "../remove-user";
-import { useSelectedItem } from "../../../contexts/selected-item/useSelectedItem";
+import { useNavigate } from "react-router-dom";
+import { useSelectedUser } from "../../../contexts/useSelectedUser";
+import { StatusEnum } from "../../../services/users/types";
 
 function UserList() {
   const { data } = useListUsers();
-  const { onSelectUser } = useSelectedItem();
+  const navigate = useNavigate();
+  const { onSelectUser } = useSelectedUser();
 
   console.log("re-rendered!");
 
@@ -17,11 +19,22 @@ function UserList() {
     id: string;
     name: string;
     email: string;
-    status: string;
+    status: StatusEnum;
   }>[] = [
     { field: "name", headerName: "Nome", width: 150 },
     { field: "email", headerName: "E-mail", width: 400 },
-    { field: "status", headerName: "Status", width: 150 },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 150,
+      renderCell: (params) => (
+        <span>
+          {params.row.status === StatusEnum.ACTIVE
+            ? "Ativo"
+            : "Inativo"}
+        </span>
+      ),
+    },
     {
       field: "actions",
       headerName: "Ações",
@@ -37,13 +50,17 @@ function UserList() {
         >
           <IconButton
             color="primary"
-            onClick={() => console.log("Edit", params.row)}
+            onClick={() => {
+              navigate(`/user/edit/${params.row.id}`);
+            }}
           >
             <EditIcon />
           </IconButton>
           <IconButton
             color="error"
-            onClick={() => onSelectUser(params.row)}
+            onClick={() => {
+              onSelectUser(params.row);
+            }}
           >
             <DeleteIcon />
           </IconButton>
@@ -65,8 +82,6 @@ function UserList() {
 
   return (
     <Box sx={{ mt: 4, width: "100%" }}>
-      <RemoveUser />
-
       <DataGrid
         rows={rows}
         columns={columns}
