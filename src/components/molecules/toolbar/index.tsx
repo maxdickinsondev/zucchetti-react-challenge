@@ -1,5 +1,4 @@
 import Add from "@mui/icons-material/Add";
-import { useNavigate } from "react-router-dom";
 import { CustomBox } from "../../atoms/box";
 import { CustomTypography } from "../../atoms/typography";
 import { CustomButton } from "../../atoms/button";
@@ -12,21 +11,23 @@ const style = {
   justifyContent: "space-between",
 };
 
-function Toolbar() {
-  const navigate = useNavigate();
+interface ToolbarProps {
+  title: string;
+  buttonText: string;
+  onClick: () => void;
+}
 
+function Toolbar({ title, buttonText, onClick }: ToolbarProps) {
   return (
     <CustomBox sx={style}>
-      <CustomTypography variant="h4">
-        Dashboard de usuários
-      </CustomTypography>
+      <CustomTypography variant="h4">{title}</CustomTypography>
       <CustomButton
         startIcon={<Add />}
         variant="contained"
         color="primary"
-        onClick={() => navigate("/user/create")}
+        onClick={onClick}
       >
-        Adicionar usuário
+        {buttonText}
       </CustomButton>
     </CustomBox>
   );

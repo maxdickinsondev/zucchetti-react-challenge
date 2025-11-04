@@ -1,8 +1,10 @@
 import { UserList } from "./user-list";
-import { Header } from "./header";
 import { Box } from "@mui/material";
 import { RemoveUser } from "./remove-user";
 import { SelectedUserProvider } from "../../../contexts/selected-user/SelectedUserProvider";
+import { Toolbar } from "../../molecules/toolbar";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 const style = {
   display: "flex",
@@ -14,9 +16,19 @@ const style = {
 };
 
 function WrapperDashboard() {
+  const navigate = useNavigate();
+
+  const navigateToCreateUser = useCallback(() => {
+    navigate("/user/create");
+  }, [navigate]);
+
   return (
     <Box sx={style}>
-      <Header />
+      <Toolbar
+        title="Dashboard de Usuários"
+        buttonText="Adicionar usuário"
+        onClick={navigateToCreateUser}
+      />
       <RemoveUser />
       <UserList />
     </Box>

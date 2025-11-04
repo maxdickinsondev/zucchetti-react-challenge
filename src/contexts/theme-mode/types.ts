@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 
-export type Mode = "light" | "dark";
+export enum ModeEnum {
+  LIGHT = "light",
+  DARK = "dark",
+}
+export type Mode = ModeEnum.LIGHT | ModeEnum.DARK;
 
 export interface ThemeModeContextData {
   mode: Mode;
