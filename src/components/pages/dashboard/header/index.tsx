@@ -1,6 +1,8 @@
 import Add from "@mui/icons-material/Add";
-import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { CustomBox } from "../../../atoms/box";
+import { CustomTypography } from "../../../atoms/typography";
+import { CustomButton } from "../../../atoms/button";
 
 const style = {
   mt: 4,
@@ -16,17 +18,19 @@ function Header() {
   console.log("re rendered Header component");
 
   return (
-    <Box sx={style}>
-      <Typography variant="h4">Dashboard de usuários</Typography>
-      <Button
+    <CustomBox sx={style}>
+      <CustomTypography variant="h4">
+        Dashboard de usuários
+      </CustomTypography>
+      <CustomButton
         startIcon={<Add />}
         variant="contained"
         color="primary"
         onClick={() => navigate("/user/create")}
       >
         Adicionar usuário
-      </Button>
-    </Box>
+      </CustomButton>
+    </CustomBox>
   );
 }
 

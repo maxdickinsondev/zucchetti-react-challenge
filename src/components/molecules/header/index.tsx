@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
 import { ThemeButton } from "../theme-button";
+import { CustomBox } from "../../atoms/box";
+import { CustomTypography } from "../../atoms/typography";
 
 const style = {
   display: "flex",
@@ -12,12 +13,12 @@ const style = {
   paddingTop: 2,
 };
 
-function Header() {
+function Header({ title }: { title: string }) {
   return (
-    <Box sx={style}>
-      <Typography variant="h6">@Zucchetti/React-Challenge</Typography>
+    <CustomBox sx={style}>
+      <CustomTypography variant="h6">{title}</CustomTypography>
       <ThemeButton />
-    </Box>
+    </CustomBox>
   );
 }
 

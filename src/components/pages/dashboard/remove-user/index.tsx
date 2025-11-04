@@ -1,7 +1,10 @@
-import { Box, Button, Dialog, Typography } from "@mui/material";
+import { Dialog } from "@mui/material";
 import { useCallback } from "react";
-import { useRemoveUser } from "../../../hooks/useRemoveUser";
-import { useSelectedUser } from "../../../contexts/selected-user/useSelectedUser";
+import { useRemoveUser } from "../../../../hooks/useRemoveUser";
+import { useSelectedUser } from "../../../../contexts/selected-user/useSelectedUser";
+import { CustomBox } from "../../../atoms/box";
+import { CustomTypography } from "../../../atoms/typography";
+import { CustomButton } from "../../../atoms/button";
 
 function RemoveUser() {
   const { mutation } = useRemoveUser();
@@ -26,14 +29,14 @@ function RemoveUser() {
 
   return (
     <Dialog open={!!user}>
-      <Box sx={{ p: 4 }}>
-        <Typography>
+      <CustomBox sx={{ p: 4 }}>
+        <CustomTypography>
           Tem certeza que deseja remover o usuário{" "}
           <strong>{user?.name}</strong>? Esta ação não poderá ser
           desfeita.
-        </Typography>
+        </CustomTypography>
 
-        <Box
+        <CustomBox
           sx={{
             display: "flex",
             flexDirection: "row",
@@ -41,16 +44,16 @@ function RemoveUser() {
             gap: 4,
           }}
         >
-          <Button onClick={onReset}>Cancelar</Button>
-          <Button
+          <CustomButton onClick={onReset}>Cancelar</CustomButton>
+          <CustomButton
             color="error"
             variant="contained"
             onClick={onDeleteUser}
           >
             Sim, remover
-          </Button>
-        </Box>
-      </Box>
+          </CustomButton>
+        </CustomBox>
+      </CustomBox>
     </Dialog>
   );
 }

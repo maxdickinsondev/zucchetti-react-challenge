@@ -1,15 +1,15 @@
-import { useThemeMode } from "../../contexts/theme-mode/useTheme";
+import { useThemeMode } from "../../../contexts/theme-mode/useTheme";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { IconButton } from "@mui/material";
+import { CustomIconButton } from "../../atoms/icon-button";
 
 function ThemeButton() {
   const { mode, onToggle } = useThemeMode();
 
   return (
-    <IconButton onClick={onToggle} color="inherit">
+    <CustomIconButton onClick={onToggle} color="inherit">
       {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
-    </IconButton>
+    </CustomIconButton>
   );
 }
 

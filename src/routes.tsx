@@ -1,17 +1,23 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Header } from "./components/header";
+import { Header } from "./components/molecules/header";
 import { ErrorBoundary } from "react-error-boundary";
 
-const Dashboard = lazy(() => import("../src/pages/dashboard"));
-const CreateUser = lazy(() => import("../src/pages/create-user"));
-const UpdateUser = lazy(() => import("./pages/update-user"));
+const Dashboard = lazy(
+  () => import("../src/components/pages/dashboard"),
+);
+const CreateUser = lazy(
+  () => import("../src/components/pages/create-user"),
+);
+const UpdateUser = lazy(
+  () => import("../src/components/pages/update-user"),
+);
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Suspense fallback={<p>Loading...</p>}>
-        <Header />
+        <Header title="@Zucchetti/React-Challenge" />
         <Routes>
           <Route
             path="/"

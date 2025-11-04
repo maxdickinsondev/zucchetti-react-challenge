@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateUser } from "../services/users";
+import type { StatusEnum } from "../services/users/types";
 
 function useUpdateUser() {
   const queryClient = useQueryClient();
@@ -14,7 +15,7 @@ function useUpdateUser() {
       id: string;
       name: string;
       email: string;
-      status: string;
+      status: StatusEnum;
     }) => updateUser(id, { name, email, status }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });

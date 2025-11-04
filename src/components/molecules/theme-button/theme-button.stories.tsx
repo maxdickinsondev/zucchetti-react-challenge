@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { ThemeButton } from "./index";
-import { ThemeModeProvider } from "../../contexts/theme-mode/ThemeModeProvider";
+import { ThemeModeProvider } from "../../../contexts/theme-mode/ThemeModeProvider";
 
 const meta = {
   title: "Components/ThemeButton",
