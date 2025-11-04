@@ -4,6 +4,41 @@ import { CustomButton } from ".";
 const meta = {
   title: "Components/Button",
   component: CustomButton,
+
+  parameters: {
+    layout: "centered",
+  },
+
+  argTypes: {
+    color: {
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "info",
+        "error",
+        "inherit",
+      ],
+      description: "Define a cor do botão",
+    },
+    variant: {
+      control: "select",
+      options: ["contained", "outlined", "text"],
+      description: "Define o tipo de variante visual",
+    },
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+      description: "Define o tamanho do botão",
+    },
+    children: {
+      control: "text",
+      description:
+        "Conteúdo interno do botão (texto ou elemento JSX)",
+    },
+  },
 } satisfies Meta<typeof CustomButton>;
 
 export default meta;
