@@ -23,11 +23,17 @@ function UserList() {
     status: StatusEnum;
   }>[] = [
     { field: "name", headerName: "Nome", width: 150 },
-    { field: "email", headerName: "E-mail", width: 400 },
+    {
+      field: "email",
+      headerName: "E-mail",
+      width: 400,
+      filterable: false,
+    },
     {
       field: "status",
       headerName: "Status",
       width: 150,
+      filterable: false,
       renderCell: (params) => (
         <span>
           {params.row.status === StatusEnum.ACTIVE
