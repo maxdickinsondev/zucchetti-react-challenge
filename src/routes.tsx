@@ -27,7 +27,7 @@ function AppRoutes() {
             path="/user/create"
             element={
               <ErrorBoundary
-                fallback={<p>Erro ao carregar criação de usuário.</p>}
+                fallback={<p>Erro ao carregar Criação de Usuário.</p>}
               >
                 <CreateUser />
               </ErrorBoundary>
@@ -37,7 +37,7 @@ function AppRoutes() {
             path="/user/edit/:id"
             element={
               <ErrorBoundary
-                fallback={<p>Erro ao carregar edição de usuário.</p>}
+                fallback={<p>Erro ao carregar Edição de Usuário.</p>}
               >
                 <UpdateUser />
               </ErrorBoundary>
