@@ -30,7 +30,6 @@ function UpdateUser() {
             name: response.name,
             email: response.email,
           });
-          console.log("response", response);
         }
       } catch (err) {
         console.error(err);
@@ -63,8 +62,6 @@ function UpdateUser() {
       console.error(err);
     }
   }, [form, id, mutation, navigate, validate]);
-
-  console.log("aqui");
 
   return (
     <CustomForm

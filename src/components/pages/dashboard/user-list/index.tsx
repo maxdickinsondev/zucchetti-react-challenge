@@ -14,8 +14,6 @@ function UserList() {
   const navigate = useNavigate();
   const { onSelectUser } = useSelectedUser();
 
-  console.log("re-rendered!");
-
   const columns: GridColDef<{
     id: string;
     name: string;
@@ -95,7 +93,7 @@ function UserList() {
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 20,
+              pageSize: 25,
             },
           },
         }}

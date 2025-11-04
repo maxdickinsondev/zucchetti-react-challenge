@@ -1,6 +1,13 @@
 export default {
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.d.ts",
+    "!src/main.tsx",
+    "!src/**/*.stories.{ts,tsx}",
+    "!src/**/index.{ts,tsx}",
+  ],
   moduleNameMapper: {
     "\\.(gif|ttf|eot|svg|png)$":
       "<rootDir>/test/__mocks__/fileMock.js",

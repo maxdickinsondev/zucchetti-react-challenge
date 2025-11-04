@@ -7,8 +7,6 @@ function RemoveUser() {
   const { mutation } = useRemoveUser();
   const { user, onSelectUser } = useSelectedUser();
 
-  console.log("re-rendered remover user component");
-
   const onReset = useCallback(() => {
     onSelectUser(null);
   }, [onSelectUser]);

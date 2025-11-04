@@ -19,7 +19,7 @@ interface Form {
   email: string;
 }
 
-interface FormProps {
+export interface FormProps {
   form: Form;
   title: string;
   errors: Partial<Record<keyof Form, string>>;

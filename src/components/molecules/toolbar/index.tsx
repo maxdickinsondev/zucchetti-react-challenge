@@ -11,7 +11,7 @@ const style = {
   justifyContent: "space-between",
 };
 
-interface ToolbarProps {
+export interface ToolbarProps {
   title: string;
   buttonText: string;
   onClick: () => void;
