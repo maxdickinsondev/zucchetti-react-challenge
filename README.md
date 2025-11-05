@@ -59,3 +59,11 @@ npm run build
 
 # 9️⃣ Pré-visualizar o build localmente
 npm run preview
+
+```
+
+## 🌍 Acesse o projeto
+
+Você pode visualizar o projeto online clicando no link abaixo:
+
+🔗 [Acesse o site aqui](https://zucchetti.netlify.app)
