@@ -23,7 +23,7 @@ O projeto inclui mock de API com JSON Server, documentação de componentes com 
 ```bash
 # 1️⃣ Clonar o repositório
 git clone https://github.com/maxdickinsondev/zucchetti-react-challenge.git
-cd nome-do-repositorio
+cd zucchetti-react-challenge
 
 # 2️⃣ Instalar dependências
 npm install
