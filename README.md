@@ -18,6 +18,19 @@ O projeto inclui mock de API com JSON Server, documentação de componentes com 
 
 ---
 
+## ⚙️ Pré-requisitos
+
+Antes de começar, verifique se você possui as seguintes ferramentas instaladas em sua máquina:
+
+- 🟢 **Node.js v22.20.0** (ou superior)
+- 📦 **npm** ou **yarn** (gerenciador de pacotes)
+
+Você pode verificar a versão do Node instalada executando o comando:
+
+```bash
+node -v
+```
+
 ## ✅ Como executar (todos os comandos)
 
 ```bash
