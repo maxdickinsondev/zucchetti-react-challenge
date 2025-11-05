@@ -11,36 +11,6 @@
       "name": "Jane Doe",
       "email": "janedoe@test.com",
       "status": "active"
-    },
-    {
-      "id": "034e",
-      "name": "1111    a",
-      "email": "max@gmail.com",
-      "status": "active"
-    },
-    {
-      "id": "db53",
-      "name": "max",
-      "email": "max@test.com",
-      "status": "active"
-    },
-    {
-      "id": "96a7",
-      "name": "ddsd",
-      "email": "max@gmail.com",
-      "status": "active"
-    },
-    {
-      "id": "4936",
-      "name": "ddd",
-      "email": "ddd@gmail.com",
-      "status": "active"
-    },
-    {
-      "name": "Max123",
-      "email": "maxsousa@gmail.comm",
-      "status": "active",
-      "id": "ce3a"
     }
   ]
 }
