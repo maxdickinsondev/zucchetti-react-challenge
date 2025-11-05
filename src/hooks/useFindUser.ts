@@ -1,3 +1,0 @@
-function useFindUserById() {}
-
-export { useFindUserById };
