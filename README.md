@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 🚀 Zucchetti - Desafio Frontend React – Dashboard de Usuários
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém um **desafio técnico de Frontend** da empresa Zucchetti: um **Dashboard (CRUD) de Usuários** construído com React, TypeScript e Vite.  
+O projeto inclui mock de API com JSON Server, documentação de componentes com Storybook, testes com Jest + React Testing Library e gerenciamento de estado global com Context API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias utilizadas
 
-## React Compiler
+- ⚛️ **React com Vite**  
+- 🧠 **TypeScript**  
+- 🎨 **Material UI (MUI)**  
+- 🌐 **Context API** (gerenciamento de estado global)  
+- 🧪 **Jest + React Testing Library**  
+- 📘 **Storybook**  
+- 🗄️ **JSON Server** (mock de API REST)  
+- 🧹 **ESLint + Prettier**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✅ Como executar (todos os comandos)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# 1️⃣ Clonar o repositório
+git clone https://github.com/maxdickinsondev/zucchetti-react-challenge.git
+cd nome-do-repositorio
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 2️⃣ Instalar dependências
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 3️⃣ Rodar o JSON Server (backend fake)
+npm run server
+# JSON Server por padrão: http://localhost:3001
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 4️⃣ Iniciar a aplicação em modo desenvolvimento
+npm run dev
+# App por padrão: http://localhost:5173
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 5️⃣ Rodar o Storybook (documentação de componentes)
+npm run storybook
+# Storybook por padrão: http://localhost:6006
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 6️⃣ Rodar os testes (Jest + React Testing Library)
+npm test
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# (opcional) Relatório de coverage
+npm test:coverage
+
+# 7️⃣ Rodar o Lint
+npm run lint
+
+# (opcional) Corrigir problemas automaticamente com o ESLint/Prettier
+npm run format
+# ou
+npm run lint:fix
+
+# 8️⃣ Gerar build de produção
+npm run build
+
+# 9️⃣ Pré-visualizar o build localmente
+npm run preview
