@@ -6,13 +6,7 @@ import { AppRoutes } from "./routes";
 
 import { ThemeModeProvider } from "./contexts/theme-mode/ThemeModeProvider";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 function App() {
   return (
